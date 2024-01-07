@@ -1,0 +1,136 @@
+.navbar {
+    //! Class
+    width: 100%;
+    height: 64px;
+    background-color: $background-white;
+
+}
+
+.navbar-left {
+    width: fit-content;
+    height: 100%;
+    margin-left: 48px;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    #wallet-dropdown {
+        display: none;
+        position: absolute;
+        left: -8px;
+        top: 54px;
+        width: 310px;
+        height: fit-content;
+        background-color: $background-white;
+        border-radius: 3px;
+        box-shadow: $box-shadow;
+
+        .wallet-item {
+            height: 72px;
+            width: 100%;
+            .name-wallet-navbar-dropdown {
+                height: 21px;
+                font-size: 14px;
+                line-height: 21px;
+                font-weight: 500;
+            }
+
+            .total-wallet-navbar-dropdown {
+                height: 18px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                color: $text-light;
+            }
+
+            &:hover {
+                background-color: $background-hover;
+            }
+        }
+
+        .title-wallet-dropdown {
+            color: $text-light;
+            font-size: 12px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+    }
+}
+
+.info {
+    margin-left: 8px;
+    width: 68%;
+}
+
+.img-wallet {
+    height: 40px;
+}
+
+.name-wallet-navbar {
+    height: 21px;
+    font-size: 12px;
+    line-height: 21px;
+
+    // position: relative;
+    &:after {
+        content: "";
+        // position: absolute;
+        // right: 0;
+        // top: 0;
+        margin-left: 3px;
+        display: inline-block !important;
+        width: 0px;
+        height: 0px;
+        // border: 3px solid #000;
+        border-style: solid;
+        border-color: #000 transparent transparent transparent;
+        border-width: 3px 3px 3px 3px;
+    }
+}
+
+.total-wallet-navbar {
+    height: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.navbar-right {
+    
+    .list-navbar-right {
+        display: flex;
+        color: $color-icon;
+        .item-list-navbar-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+
+            .jump-to-day-icon {
+                position:relative;
+                .today {
+                    font-size: 10px;
+                    font-weight: 700;
+                    position: absolute;
+                    top: 35%;
+                    left: 23%;;
+                }
+            }
+
+            &:hover {
+                color: $dark-color;
+                cursor: pointer;
+                g {
+                    fill: #000 !important;
+                }
+            }
+        }
+    }
+}
+
+//! Dropdown Change Wallet

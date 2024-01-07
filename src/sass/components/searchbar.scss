@@ -1,0 +1,311 @@
+.container-search-bar {
+    width: 100%;
+    height: 250px;
+    background-color: $background-white;
+    padding-left: 80px;
+    padding-right: 76px;
+    position: absolute;
+    z-index: 100;
+
+    .search-bar-top {
+        height: 63px;
+
+        .search-bar-top-left {
+            .icon-backhome {
+                width: 48px;
+                height: 48px;
+                margin: 9px 12px 6px 12px;
+
+                g {
+                    fill: $text-light;
+
+                    &:hover {
+                        fill: $dark-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+
+
+
+            .title-search-bar {
+                font-size: 20px;
+                font-weight: 500;
+                letter-spacing: 0.4px;
+            }
+        }
+
+        .search-bar-top-right {
+            font-size: 14px;
+            color: $text-light;
+            margin-top: 14px;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .search-bar-bottom {
+        padding-left: 73px;
+        padding-top: 15px;
+
+        .item-search-bar-bottom {
+            width: 25%;
+            padding: 0 12px 16px 12px;
+
+            .container-item {
+                height: 64px;
+                border: $border-light;
+                border-radius: 8px;
+                padding: 5px 15px;
+
+                .name-field {
+                    font-size: $text-size-12;
+                    color: $text-light;
+                    height: 21px;
+                    line-height: 21px;
+
+                }
+
+                .detail-item {
+                    padding-top: 2px;
+
+                    .name-item {
+                        font-size: 17px;
+                        padding-left: 9px;
+                        width: 90%;
+                    }
+                    img {
+                        border-radius: 50px;
+                    }
+
+                    i {
+                        font-size: 15px;
+                        color: $text-light;
+                    }
+
+                    .name-placehoder {
+                        width: 95%;
+                        font-size: 17px;
+                        color: rgba(0, 0, 0, 0.26);
+                    }
+                }
+
+
+                &:hover {
+                    cursor: pointer;
+                    border-color: $text-light;
+                }
+
+            }
+
+
+        }
+
+
+    }
+}
+
+//! Modal
+.modal-wallet-header {
+    padding: 20px 33px;
+    color: $dark-color;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    border: none;
+}
+.modal-wallet {
+    background-color: $background-white;
+    padding: 0;
+    min-height: 500px;
+    border-radius: 3px;
+    .modal-wallet-item {
+        height: 72px;
+        width: 100%;
+        padding-left: 31px !important;
+        .modal-img-wallet {
+            height: 40px;
+
+        }
+
+        .modal-info {
+            margin-left: 15px;
+            width: 75%;
+
+            .name-wallet-navbar-modal {
+                height: 21px;
+                font-size: 14px;
+                line-height: 21px;
+                font-weight: 500;
+            }
+
+            .total-wallet-navbar-modal {
+                height: 18px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                color: $text-light;
+            }
+        }
+
+        &:hover {
+            background-color: $background-hover;
+            cursor: pointer;
+        }
+    }
+
+    .title-wallet-modal {
+        color: $text-light;
+        font-size: 12px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .hr-wallet {
+        width: 425px;
+        margin: 0 auto;
+        color: #25a04254;
+    }
+}
+
+
+
+// ! Category Fillnav Modal
+#categoryFillNavModal {
+    .searchbox {
+        background-color: $background-searchbox;
+        width: 208px;
+        height: 40px;
+        border-radius: 50px;
+        margin: 0 auto;
+        padding-right: 5px;
+        overflow: hidden;
+        .input-search {
+            border: none;
+            background-color: inherit;
+            width: 150px;
+            outline: none;
+            
+
+        }
+    }
+
+    .pill-category {
+
+        button {
+            color: $text-light !important;
+
+
+        }
+        .nav-item {
+            // width: 33%;
+            // padding: 0 auto;
+        }
+        .nav-link.active {
+            color: #2db84c !important;
+            background-color: transparent;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #2db84c;
+                margin-top: 5px;
+            }
+
+        }
+    }
+    .modal-body {
+      height: 700px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    & {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+        .category-list {
+            padding: 12px;
+            .category {
+
+                .wrap-container {
+                    &:hover {
+                        background-color: $background-hover;
+                        cursor: pointer;
+                        border-radius: 5px;
+                    }
+                    font-size: 20px;
+                    padding: 10px;
+
+                    .icon-category {
+                        margin-right: 10px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50px;
+                        }
+                    }
+
+                    .name-category {}
+                }
+
+                .sub-category {
+                    padding: 0 12px;
+                    .sub-category-item {
+                        position: relative;
+                        padding: 10px;
+                        &:hover {
+                            background-color: $background-hover;
+                            cursor: pointer;
+                            border-radius: 5px;
+                        }
+                        .icon-sub-category {
+                            margin: 0 10px;
+    
+                            img {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50px;
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 9px;
+                                height: 1px;
+                                background-color: $text-light;
+                                top: 48%;
+                                left: 10px;
+                            }
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 1px;
+                                height: 26px;
+                                background-color: $text-light;
+                                top: 0;
+                                left: 9px;
+                            }
+                        }
+    
+                        .name-sub-category {
+    
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+}

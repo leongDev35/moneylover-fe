@@ -1,0 +1,119 @@
+.container-body-fillpage {
+    width: 100%;
+    height: 100vh;
+    padding-left: 80px;
+    background-color: rgba(45, 184, 76, 0.0784313725);
+    display: flex;
+    justify-content: center;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+
+    .box-fillpage {
+        margin-top: 300px;
+        width: 50%;
+        min-height: 360px;
+        max-height: 610px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: $box-shadow;
+
+        .body-box-fillpage {
+
+
+            .modal-time-range {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                padding: 0 20px;
+
+                .overview-time-range {
+                    border-bottom: 1px solid $background-hover;
+
+                    >p {
+                        font-weight: 500;
+                    }
+
+                    .overview-detail {
+                        margin: 10px 0;
+
+                        .overview-detail-title {
+                            color: $text-light;
+                        }
+
+                        .overview-detail-number {
+                            color: $text-color-extense
+                        }
+                    }
+                }
+
+                .break-modal-time-range {
+                    margin: 5px 0;
+                    height: 15px;
+                    background-color: $background-hover;
+                }
+
+                .detail-day {
+                    flex: 1;
+                    max-height: 450px;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    /* Hide scrollbar for IE, Edge and Firefox */
+                    & {
+                        -ms-overflow-style: none;
+                        /* IE and Edge */
+                        scrollbar-width: none;
+                        /* Firefox */
+                    }
+
+                    overflow-y: scroll;
+                    margin: 15px 0;
+
+                    .header-detail-day {
+                        padding: 10px 0;
+
+                        .day-less {
+                            font-size: 34px;
+                            margin-right: 10px;
+                        }
+
+                        .day-full {
+                            color: $text-light;
+                        }
+                    }
+
+                    .transactions-of-the-day {
+                        .list-transaction {
+                            padding: 8px;
+
+                            .item-transaction {
+                                padding: 8px;
+
+                                &:hover {
+                                    background-color: $background-hover;
+                                    cursor: pointer;
+                                    border-radius: 8px;
+                                }
+
+                                .left-item-transaction {
+                                    .icon-category {
+                                        margin-right: 12px;
+
+                                        img {
+                                            border-radius: 50px;
+                                            width: 40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

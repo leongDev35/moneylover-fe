@@ -1,0 +1,436 @@
+.sidebar {
+    width: 80px;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 110;
+    box-shadow: -1px -4px 8px #999;
+
+    .icon-modal-side {
+        width: 100%;
+        height: 64px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: $background-hover;
+            cursor: pointer;
+        }
+    }
+
+    .item-sidebar {
+        color: #2db84c;
+        width: 100%;
+
+        g {
+            fill: #2db84c;
+        }
+
+        .text-sidebar {
+            margin-top: 8px;
+            font-size: $text-size-12;
+        }
+
+        &:hover {
+            background-color: $background-hover;
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 100;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: $background-white;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+#off-canvas {
+    width: 0%;
+    height: 100vh;
+    // z-index: 99;
+    position: absolute;
+    top: 0;
+    background-color: #111;
+    opacity: 0.5;
+}
+
+#mySidenav {
+    .avatar-user {
+        margin-bottom: 35px;
+
+        .name-alias {
+            width: 64px;
+            height: 64px;
+            display: inline-block;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 64px;
+            font-weight: 500;
+            font-size: 32px;
+            color: #fff;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .user-name {
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, .87);
+            text-align: center;
+            margin: 0;
+        }
+
+        .user-email {
+            font-size: 12px;
+            line-height: 16px;
+            color: rgba(0, 0, 0, .54);
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+// ! Modal
+.modal {
+    .modal-body {
+        .container-transaction-modal {
+            .amount-transaction-modal {
+                .coin-transaction-modal {
+                    border: 1px solid $text-light;
+                    border-radius: 3px;
+                    height: 25px;
+                    text-align: center;
+                    padding: 5px;
+                }
+
+                .detail-amount {
+                    flex: 1;
+                    margin-left: 10px;
+
+                    .title-detail-amount {
+                        font-size: 12px;
+                        color: $text-light;
+                    }
+
+                    .number-detail-amount {
+                        input {
+                            font-size: 30px;
+                            outline: none;
+                            border: none;
+                            width: 100%;
+                        }
+
+                    }
+                }
+            }
+
+            .category-transaction {
+                .img-category {
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50px;
+                    }
+                }
+
+                .right-category-transaction {
+                    margin-left: 10px;
+                    font-size: 20px;
+                    color: $text-light;
+
+                    .title-right-category {}
+                }
+
+                &:hover {
+                    background-color: $background-hover;
+                    cursor: pointer;
+                    border-radius: 3px;
+                }
+            }
+
+            .bottom-transaction {
+                .img-category {
+                    text-align: center;
+                    font-size: 20px;
+
+                    i {
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        border-radius: 50px;
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50px;
+                    }
+                }
+
+                .right-bottom-transaction {
+                    margin-left: 10px;
+                    font-size: 16px;
+
+                    .title-right-bottom {}
+                }
+
+                &:hover {
+                    background-color: $background-hover;
+                    cursor: pointer;
+                    border-radius: 3px;
+                }
+            }
+        }
+    }
+}
+
+
+.modal-transaction {
+    // margin-left: 80px;
+}
+
+#noteModal {
+    .modal-content {
+        min-height: 550px;
+    }
+}
+
+.bottom-transaction.note-transaction {
+    overflow-wrap: anywhere;
+}
+
+.ant-picker-dropdown {
+    z-index: 9999;
+}
+
+#walletModal {
+    .wallet-item {
+        padding: 10px;
+
+        &:hover {
+            background-color: $background-hover;
+            cursor: pointer;
+        }
+
+        .info {
+            width: 80%;
+        }
+    }
+}
+
+// ! Category
+#categoryModal {
+    .modal-body {
+      height: 700px;
+      overflow-y: scroll;
+        .category-list {
+            .category {
+
+                .wrap-container {
+                    &:hover {
+                        background-color: $background-hover;
+                        cursor: pointer;
+                        border-radius: 5px;
+                    }
+                    font-size: 20px;
+                    padding: 10px;
+
+                    .icon-category {
+                        margin-right: 10px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50px;
+                        }
+                    }
+
+                    .name-category {}
+                }
+
+                .sub-category {
+                    padding: 10px;
+                    .sub-category-item {
+                        position: relative;
+                        padding: 10px;
+                        &:hover {
+                            background-color: $background-hover;
+                            cursor: pointer;
+                            border-radius: 5px;
+                        }
+                        .icon-sub-category {
+                            margin: 0 10px;
+    
+                            img {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50px;
+                            }
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 9px;
+                                height: 1px;
+                                background-color: $text-light;
+                                top: 48%;
+                                left: 10px;
+                            }
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 1px;
+                                height: 26px;
+                                background-color: $text-light;
+                                top: 0;
+                                left: 9px;
+                            }
+                        }
+    
+                        .name-sub-category {
+    
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+// ! Modal new wallet
+#walletCreateModal {
+   .modal-body {
+    .container-new-wallet-modal {
+        .amount-new-wallet-modal {
+            .coin-new-wallet-modal {
+                border: 1px solid $text-light;
+                border-radius: 3px;
+                height: 25px;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .detail-amount {
+                flex: 1;
+                margin-left: 10px;
+
+                .title-detail-amount {
+                    font-size: 12px;
+                    color: $text-light;
+                }
+
+                .number-detail-amount {
+                    input {
+                        font-size: 30px;
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                    }
+
+                }
+            }
+        }
+
+        
+
+        .bottom-new-wallet {
+            .img-category {
+                text-align: center;
+                font-size: 20px;
+
+                i {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 50px;
+                }
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50px;
+                }
+            }
+
+            .right-bottom-new-wallet {
+                margin-left: 10px;
+                font-size: 16px;
+
+                .title-right-bottom {}
+            }
+
+            &:hover {
+                background-color: $background-hover;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+        }
+    }
+   } 
+}

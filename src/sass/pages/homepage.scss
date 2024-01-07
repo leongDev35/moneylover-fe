@@ -1,0 +1,427 @@
+.container-navbar-side {
+    z-index: 1;
+    position: relative;
+}
+
+.container-body-homepage {
+    width: 100%;
+    height: 100vh;
+    padding-left: 80px;
+    background-color: rgba(45, 184, 76, 0.0784313725);
+    display: flex;
+    justify-content: center;
+    top: 0;
+    position: absolute;
+
+    .box-transaction {
+        margin-top: 130px;
+        width: 50%;
+        min-height: 360px;
+        max-height: 610px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: $box-shadow;
+
+        #scrollable-container {
+            // position: relative;
+            overflow-x: scroll;
+            white-space: nowrap;
+            max-width: 100%;
+            /* Điều chỉnh chiều rộng tối đa của div */
+            margin: 0;
+
+            // height: 40px;
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            & {
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+            }
+
+            // ! Pill Home Page
+            .pill-transaction {
+                line-height: 30px;
+
+                button {
+                    color: $text-light !important;
+                    font-weight: 500;
+                    height: 100%;
+                    padding: 0 1rem;
+
+                }
+
+                .nav-item {
+                    display: block;
+                    height: 53px;
+                    position: relative;
+
+                    &:hover {
+                        background-color: $background-hover;
+                    }
+                }
+
+                .nav-link.active {
+                    color: #2db84c !important;
+                    background-color: transparent;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        background-color: #2db84c;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                }
+            }
+
+
+        }
+
+        #scrollable-content {
+            // position: absolute;
+            // top: 0;
+            // left: 13px;
+            display: block;
+            transition: transform 0.3s ease;
+            transform: translateX(0px);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+
+        .list-item {
+            -webkit-user-select: none;
+            /* Safari */
+            -ms-user-select: none;
+            /* IE 10 and IE 11 */
+            user-select: none;
+            /* Standard syntax */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 10px;
+            display: inline-block;
+            min-width: 100px;
+            /* Điều chỉnh chiều rộng của mỗi đề mục */
+            box-sizing: border-box;
+        }
+
+        .hr-transaction {
+            margin: 0;
+            color: #25a04254;
+
+        }
+    }
+}
+
+//! Tab pill content
+
+.tab-content {
+    .container-balance-pill {
+        width: 100%;
+        padding: 16px;
+
+        .hr-balance {
+            margin: -1px;
+        }
+
+        .income-balance {
+            font-size: 14px;
+
+            .p-income {
+                color: $text-color-income
+            }
+        }
+
+        .extense-balance {
+            font-size: 14px;
+
+            .p-extense {
+                color: $text-color-extense
+            }
+        }
+
+        .total-balance {
+            font-size: 16px;
+            text-align: end;
+            color: $text-color-income;
+
+        }
+    }
+
+    .break {
+        background-color: $background-hover;
+        height: 25px;
+    }
+
+    .detail-range-transaction {
+        padding: 16px;
+
+        .detait-item {
+            margin: 15px 0;
+
+            &:hover {
+                background-color: $background-hover;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+
+            .range-time-transaction {
+                font-size: 34px;
+                background-color: antiquewhite;
+                border: 3px solid salmon;
+                border-radius: 20px;
+                padding: 10px;
+            }
+
+            .total-of-this-time {
+                font-size: 14px;
+                font-weight: 700;
+
+                p {
+                    padding: 5px 0;
+                }
+
+                .income-of-this-time {
+                    color: $text-color-income;
+
+                }
+
+                .expense-of-this-time {
+                    color: $text-color-extense;
+
+                }
+
+                .balance-of-this-time {
+                    color: $text-color-extense;
+
+                }
+            }
+        }
+    }
+
+    .transaction-empty {
+        padding-top: 55px;
+        padding-bottom: 50px;
+
+        .moneylover-empty {
+            text-align: center;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            .smile {
+                font-size: 112px;
+                display: inline-block;
+                font-weight: 400;
+                line-height: 112px;
+                padding-bottom: 20px;
+                text-align: center;
+                color: grey;
+                -webkit-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+            }
+
+            .all {}
+
+            .tips {
+                display: block;
+                text-align: center;
+                color: grey;
+
+                .note {
+                    display: block;
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+            }
+
+        }
+    }
+}
+
+//! Modal time range
+#time-range-modal {
+
+    .time-range-modal-dialog {
+        max-width: fit-content !important;
+
+        .time-range-modal-content {
+            width: 597px;
+            height: 678px;
+            margin-left: 80px;
+            margin-top: 130px;
+
+            .modal-time-range {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+
+                .overview-time-range {
+                    border-bottom: 1px solid $background-hover;
+
+                    >p {
+                        font-weight: 500;
+                    }
+
+                    .overview-detail {
+                        margin: 10px 0;
+
+                        .overview-detail-title {
+                            color: $text-light;
+                        }
+
+                        .overview-detail-number {
+                            color: $text-color-extense
+                        }
+                    }
+                }
+
+                .break-modal-time-range {
+                    margin: 5px 0;
+                    height: 15px;
+                    background-color: $background-hover;
+                }
+
+                .detail-day {
+                    flex: 1;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    /* Hide scrollbar for IE, Edge and Firefox */
+                    & {
+                        -ms-overflow-style: none;
+                        /* IE and Edge */
+                        scrollbar-width: none;
+                        /* Firefox */
+                    }
+
+                    overflow-y: scroll;
+                    margin: 15px 0;
+
+                    .header-detail-day {
+                        padding: 10px 0;
+
+                        .day-less {
+                            font-size: 34px;
+                            margin-right: 10px;
+                        }
+
+                        .day-full {
+                            color: $text-light;
+                        }
+                    }
+
+                    .transactions-of-the-day {
+                        .list-transaction {
+                            padding: 8px;
+
+                            .item-transaction {
+                                padding: 8px;
+
+                                &:hover {
+                                    background-color: $background-hover;
+                                    cursor: pointer;
+                                    border-radius: 8px;
+                                }
+
+                                .left-item-transaction {
+                                    .icon-category {
+                                        margin-right: 12px;
+
+                                        img {
+                                            border-radius: 50px;
+                                            width: 40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+#detail-transaction-modal {
+
+    .detail-transaction-modal-dialog {
+        max-width: fit-content !important;
+
+        .detail-transaction-modal-content {
+            width: 597px;
+            height: 678px;
+            margin-left: 80px;
+            margin-top: 130px;
+
+            .detail-transaction-modal-header {
+                position: relative;
+                padding: 16px 35px
+            }
+
+            .body-detail-transaction-modal {
+                .amount-detail-transaction {
+                    text-align: end;
+                    color: $text-color-extense;
+                    padding: 10px;
+                    margin-left: 265px;
+                    border-bottom: 1px solid $background-hover;
+                }
+
+                .category-detail-transaction {
+                    padding: 19px;
+                    color: $text-light;
+
+                }
+
+                .time-detail-transaction {
+                    padding: 32px;
+                    color: $text-light;
+
+                }
+
+                .wallet-detail-transaction {
+                    padding: 28px;
+                    color: $text-light;
+
+                    img {
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+            }
+
+            .delete-transaction-button {
+                border-radius: 3px;
+                color: #fff;
+                background-color: $text-color-extense;
+                height: 50px;
+                font-size: 23px;
+                text-align: center;
+                line-height: 50px;
+
+                &:hover {
+                    opacity: 0.9;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
