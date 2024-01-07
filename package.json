@@ -25,7 +25,7 @@
   "scripts": {
     "build:scss": "node-sass src/styles/styles.scss -o src/styles",
     "start": "react-scripts start",
-    "build": "npm run build:scss && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
