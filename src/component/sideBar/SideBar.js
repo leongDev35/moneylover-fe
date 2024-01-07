@@ -159,7 +159,7 @@ export default function SideBar() {
     console.log(res.data.message);
     if (res.data.message == 'Tên ví chưa tồn tại') {
       setCheckNewNameWallet(false)
-    } else if(res.data.message == 'Tên ví đã tồn tại') {
+    } else if (res.data.message == 'Tên ví đã tồn tại') {
       setCheckNewNameWallet(true)
     }
   }
@@ -217,18 +217,18 @@ export default function SideBar() {
 
 
         </div>
-          <Link to= '/chart' style={{textDecoration: 'none'}}>
-        <div class='d-flex flex-column align-items-center justify-content-center p-3 item-sidebar' >
+        <Link to='/chart' style={{ textDecoration: 'none' }}>
+          <div class='d-flex flex-column align-items-center justify-content-center p-3 item-sidebar' >
 
 
-          <div>
-            <i class="fa-solid fa-chart-simple"></i>
+            <div>
+              <i class="fa-solid fa-chart-simple"></i>
+            </div>
+            <div class='text-sidebar'>Chart</div>
+
+
           </div>
-          <div class='text-sidebar'>Chart</div>
-
-
-        </div>
-          </Link>
+        </Link>
 
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onClick={() => {
@@ -344,18 +344,22 @@ export default function SideBar() {
                 <div class='bottom-transaction d-flex align-items-center p-3' data-bs-toggle="modal" data-bs-target="#walletModal">
 
 
+                  {!walletValue ? null :
+                    <>
+                      <div class='img-category'>
 
-                  <div class='img-category'>
+                        <img src={walletValue.wallet_icon} />
 
-                    <img src={walletValue.wallet_icon} />
+                      </div>
+                      <div class='right-bottom-transaction'>
+                        <div class='title-right-bottom'>
+                          {walletValue.wallet_name}
+                        </div>
 
-                  </div>
-                  <div class='right-bottom-transaction'>
-                    <div class='title-right-bottom'>
-                      {walletValue.wallet_name}
-                    </div>
+                      </div>
+                    </>
+                  }
 
-                  </div>
                 </div>
 
               </div>
@@ -422,7 +426,8 @@ export default function SideBar() {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
+            {!CurrentListWallet  ? null :
+            <>
               {CurrentListWallet.map(wallet =>
                 <div class='wallet-item d-flex align-items-center' data-bs-dismiss="modal" onClick={
                   () => {
@@ -436,6 +441,8 @@ export default function SideBar() {
                     <div class='name-wallet-navbar-dropdown'>{wallet.wallet_name}</div>
                     <div class='total-wallet-navbar-dropdown'>+{wallet.total} ₫</div>
                   </div>
+                  {!walletDefault ? null : 
+                <>
                   {wallet.wallet_name == walletValue.wallet_name ?
                     <span data-v-6873f8d2 className="not-support check">
                       <svg data-v-0698e127 data-v-6873f8d2 xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={24} height={24} viewBox="0 0 24 24" aria-labelledby="ic_check" version="1.1">
@@ -449,10 +456,14 @@ export default function SideBar() {
                     :
                     null
                   }
+                  </>}
 
 
                 </div>
               )}
+              </>
+            
+          }  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -571,9 +582,9 @@ export default function SideBar() {
 
                         changeNameNewWalle(e)
                       }} />
-                      {checkNewNameWallet ? <span class ='text-danger ms-3'>Tên ví đã tồn tại</span> : null}  
+                      {checkNewNameWallet ? <span class='text-danger ms-3'>Tên ví đã tồn tại</span> : null}
 
-                      
+
                     </div>
 
                   </div>

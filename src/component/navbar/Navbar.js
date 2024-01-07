@@ -11,11 +11,18 @@ export default function Navbar() {
     return wallet.defaultWallet
 
   })
+  
+  if(walletDefault) {
+    console.log(1);
+  }
+  console.log(walletDefault);
   const CurrentListWallet = useSelector(({ wallet }) => {
     return wallet.currentListWallet
 
   })
-
+  if(CurrentListWallet) {
+    console.log(1);
+  }
   const [subjectSel, setSubject] = useState();
   const [walletDropdown, setWalletDropdown] = useState();
   const [day, setDay] = useState(null);
@@ -78,14 +85,20 @@ export default function Navbar() {
             <img class='img-wallet' alt='Anh Wallet' src='https://static.moneylover.me/img/icon/ic_category_all.png' />
           </div>
           <div class='d-flex flex-column info'>
+            {!walletDefault ? null : 
+            <>
             <div class='name-wallet-navbar'>{walletDefault.wallet_name}</div>
             <div class='total-wallet-navbar'>{walletDefault.total} ₫</div>
+            </>}
+            
           </div>
           {/* //! Dropdown */}
           <div id='wallet-dropdown' class=''>
             <p class='title-wallet-dropdown'>Select Wallet</p>
             <hr />
             {/* Total wallet */}
+            {!CurrentListWallet  ? null :
+            <>
             {CurrentListWallet.map(wallet =>
               <div class='wallet-item d-flex align-items-center ps-3' onClick={
                 () => {
@@ -99,6 +112,8 @@ export default function Navbar() {
                   <div class='name-wallet-navbar-dropdown'>{wallet.wallet_name}</div>
                   <div class='total-wallet-navbar-dropdown'>+{wallet.total} ₫</div>
                 </div>
+                {!walletDefault ? null : 
+                <>
                 {wallet.wallet_name == walletDefault.wallet_name ?
                   <span data-v-6873f8d2 className="not-support check">
                     <svg data-v-0698e127 data-v-6873f8d2 xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={24} height={24} viewBox="0 0 24 24" aria-labelledby="ic_check" version="1.1">
@@ -112,10 +127,16 @@ export default function Navbar() {
                   :
                   null
                 }
+               </>}
 
 
               </div>
             )}
+            </>
+            
+            }  
+
+            
 
 
 

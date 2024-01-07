@@ -17,8 +17,11 @@ const walletSlice = createSlice({
                 console.log(action);
                 if (action.payload.userData.accessToken) {
                     state.currentListWallet = action.payload.wallet.wallets;
+                    console.log(action.payload.wallet);
                     const foundWallet = action.payload.wallet.wallets.find(wallet => wallet.wallet_name === "Tiền mặt");
+                    console.log(foundWallet);
                     if(foundWallet) {
+                        state.defaultWallet = foundWallet;
                         localStorage.setItem('defaultWallet', JSON.stringify(foundWallet))
                     }
                     localStorage.setItem('listWallet', JSON.stringify(action.payload.wallet.wallets))
